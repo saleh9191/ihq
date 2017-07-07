@@ -26,4 +26,20 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function answer()
+    {
+        return $this->hasMany(Answer::class);
+    }
+
+    public function question()
+    {
+        return $this->hasMany(Question::class);
+    }
+
+    // وضعت ١ لاني اتوقع ان هذي الفنكشن موجودة لشي اخر
+    public function notify1()
+    {
+        return $this->hasMany(Notify::class);
+    }
 }
